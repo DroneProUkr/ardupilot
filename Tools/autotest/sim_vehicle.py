@@ -1288,12 +1288,12 @@ group_sim.add_option("", "--sim-address",
 <<<<<<< HEAD
 =======
 group_sim.add_option("", "--sim-port-in",
-                     type=str,
-                     default="9002",
+                     type=int,
+                     default=9002,
                      help="Simulator port in. Defaults to 9002")
 group_sim.add_option("", "--sim-port-out",
-                     type=str,
-                     default="9003",
+                     type=int,
+                     default=9003,
                      help="Simulator port out. Defaults to 9003")
 group_sim.add_option("--enable-dds", action='store_true',
                      help="Enable the dds client to connect with ROS2/DDS")
