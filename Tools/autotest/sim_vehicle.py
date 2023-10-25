@@ -826,6 +826,10 @@ def start_vehicle(binary, opts, stuff, spawns=None):
 
     cmd.append("--sim-address=%s" % cmd_opts.sim_address)
 
+    cmd.append("--sim-port-in=%s" % cmd_opts.sim_port_in)
+
+    cmd.append("--sim-port-out=%s" % cmd_opts.sim_port_out)
+
     old_dir = os.getcwd()
     for i, i_dir in zip(instances, instance_dir):
         c = ["-I" + str(i)]
@@ -1324,6 +1328,14 @@ group_sim.add_option("", "--sim-address",
                      type=str,
                      default="127.0.0.1",
                      help="IP address of the simulator. Defaults to localhost")
+group_sim.add_option("", "--sim-port-in",
+                     type=str,
+                     default="9002",
+                     help="Simulator port in. Defaults to 9002")
+group_sim.add_option("", "--sim-port-out",
+                     type=str,
+                     default="9003",
+                     help="Simulator port out. Defaults to 9003")
 group_sim.add_option("--enable-dds", action='store_true',
                      help="Enable the dds client to connect with ROS2/DDS")
 
